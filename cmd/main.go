@@ -6,12 +6,12 @@ import (
 	"os"
 
 	"github.com/GoogleCloudPlatform/functions-framework-go/funcframework"
-	"github.com/b-n/coverage-writer/hello"
+	hello "github.com/b-n/coverage-writer"
 )
 
 func main() {
 	ctx := context.Background()
-	if err := funcframework.RegisterHTTPFunctionContext(ctx, "/", hello.HelloWorld); err != nil {
+	if err := funcframework.RegisterHTTPFunctionContext(ctx, "/", hello.Hello); err != nil {
 		log.Fatalf("funcframework.RegisterHTTPFunctionContext: %v\n", err)
 	}
 	// Use PORT environment variable, or default to 8080.
