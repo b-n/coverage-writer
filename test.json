@@ -1,0 +1,9 @@
+{
+  "repo": "coverage-write",
+  "branch": "main",
+  "language": "go",
+  "runAt": "2021-05-09T17:34:32.43Z",
+  "metrics": {
+    "branches": { "total": 140, "covered": 120 }
+  }
+}

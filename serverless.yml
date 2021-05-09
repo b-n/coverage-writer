@@ -17,8 +17,8 @@ package:
     - '!README.md'
 
 functions:
-  first:
-    handler: Hello
+  coverage:
+    handler: Coverage
     events:
       - http: path
 

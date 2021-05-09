@@ -3,3 +3,9 @@
 
 # Serverless related things
 .serverless/
+
+# Firebase local stuff
+firestore-debug.log
+ui-debug.log
+firebase-debug.log
+

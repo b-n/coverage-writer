@@ -24,3 +24,19 @@ curl http://localhost:8080/<function name>
 ```
 
 Note: Any changes to your source will need to restart the server (sigh)
+
+
+## Routes
+
+GET "/"
+
+Query Params:
+- org (required)
+- repo
+- branch
+- language
+- from (required)
+- to (required)
+
+POST "/"
+Body: CoverageData (required)

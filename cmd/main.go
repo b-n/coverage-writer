@@ -6,16 +6,16 @@ import (
 	"os"
 
 	"github.com/GoogleCloudPlatform/functions-framework-go/funcframework"
-	hello "github.com/b-n/coverage-writer"
+	coverage "github.com/b-n/coverage-writer"
 )
 
 func main() {
 	ctx := context.Background()
-	if err := funcframework.RegisterHTTPFunctionContext(ctx, "/", hello.Hello); err != nil {
+	if err := funcframework.RegisterHTTPFunctionContext(ctx, "/", coverage.Handle); err != nil {
 		log.Fatalf("funcframework.RegisterHTTPFunctionContext: %v\n", err)
 	}
 	// Use PORT environment variable, or default to 8080.
-	port := "8080"
+	port := "8000"
 	if envPort := os.Getenv("PORT"); envPort != "" {
 		port = envPort
 	}

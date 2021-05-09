@@ -1,4 +1,4 @@
-package hello
+package coverage
 
 import (
 	"io/ioutil"
