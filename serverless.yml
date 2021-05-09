@@ -1,0 +1,30 @@
+service: coverage-writer
+
+provider:
+  name: google
+  runtime: go113
+  project: playgound-313018
+  credentials: ./.sa.json
+
+frameworkVersion: '2'
+
+plugins:
+  - serverless-google-cloudfunctions
+
+package:
+  patterns:
+    - '!.sa.json'
+    - '!README.md'
+
+functions:
+  first:
+    handler: Hello
+    events:
+      - http: path
+
+#resources:
+#  resources:
+#    - type: storage.v1.bucket
+#      name: my-serverless-service-bucket
+#  imports:
+#    - path: my_template.jinja

@@ -1,0 +1,5 @@
+# Service account authentication json
+.sa.json
+
+# Serverless related things
+.serverless/
