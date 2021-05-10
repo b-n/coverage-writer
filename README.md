@@ -10,21 +10,32 @@ version yourself.
 
 ## Development
 
-Deploying to GCP to test each function is painfully slow, and if you happen to be writing and
-testing a lot of code, you could go over your limits. Instead, use the included `cmd` to make your
-life easier :tm:.
+You have options:
+
+1. After every change, deploy to GCP, and test it that way (pitch drop experiment slow)
+2. Run an emulated firebase locally, boot a go server locally, curl against that (much faster)
+
+### Deploying development to GCP
 
 ```sh
-go run cmd/main.go
+sls deploy --stage dev
 ```
 
-then
-```sh
-curl http://localhost:8080/<function name>
-```
+### Run locally
 
-Note: Any changes to your source will need to restart the server (sigh)
+Dependencies:
 
+- firebase emulator<br>
+  `curl -sL https://firebase.tools | bash`
+  `firebase login`
+- Patience
+
+You need a couple of terminals:
+- One to run firebase emulator: `firebase emulators:start --import seed`
+- One to run the go server: `go run cmd/main.go`
+- One to curl the things: `curl http://localhost:8000/<function name>`
+
+Note: Want to see some debugs from firebase? `tail -f firebase-debug.log`
 
 ## Routes
 

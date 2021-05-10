@@ -1,10 +1,10 @@
 .PHONY: gomodgen deploy delete
 
 gomodgen:
-	GO111MODULE=on go mod init
+	GO113MODULE=on go mod init
 
 deploy:
-	gcloud functions deploy Hello --entry-point Hello --runtime go111 --trigger-http
+	gcloud functions deploy coverage --entry-point Handle --runtime go111 --trigger-http
 
 delete:
-	gcloud functions delete Hello --entry-point Hello --runtime go111 --trigger-http
+	gcloud functions delete coverage --entry-point Handle --runtime go111 --trigger-http

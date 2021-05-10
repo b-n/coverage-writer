@@ -15,10 +15,14 @@ package:
   patterns:
     - '!.sa.json'
     - '!README.md'
+    - '!*.log'
+    - '!seed/*'
+    - '!*.json'
+    - '!.firebaserc'
 
 functions:
   coverage:
-    handler: Coverage
+    handler: Handle
     events:
       - http: path
 
