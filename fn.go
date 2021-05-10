@@ -118,7 +118,7 @@ func createCoverage(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	doc, wr, err := orgSnapshot.Ref.Collection("coverage").Add(ctx, body)
+	doc, _, err := orgSnapshot.Ref.Collection("coverage").Add(ctx, body)
 	if err != nil {
 		handleError(w, http.StatusInternalServerError, errors.New("Failed to save coverage"))
 		return
